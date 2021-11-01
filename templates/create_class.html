@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<form action='' method="post">{% csrf_token %}
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{ form.class_name }}</li>
+    </ul>
+    <input type="submit" value="授業登録">
+</form>
+<div class="container">
+        <a href="" class="btn btn-danger" role="button" data-bs-toggle="button">この授業の写真を見る</a>
+</div>
+{% else %}
+<div class="container">
+    <h1>please login</h1>
+</div>
+{% endif %}
+{% endblock content %}
