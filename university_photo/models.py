@@ -15,8 +15,8 @@ class MenuMaster(models.Model): #授業マスター
     created_at = models.DateTimeField("登録日時", auto_now_add=True)
     updated_at = models.DateTimeField("更新日時", auto_now=True)
     student = models.ManyToManyField(User,through='RegisterMenu')
-    start_time = models.CharField(max_length=20)
-    finish_time = models.CharField(max_length=20)
+    start_time = models.TimeField()
+    finish_time = models.TimeField()
     day = models.CharField(max_length=10,choices = CHOICES)
 
     def __str__(self):
